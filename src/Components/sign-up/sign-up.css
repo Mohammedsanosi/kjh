@@ -1,0 +1,31 @@
+.sign-up{
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    padding: 10px;
+    margin: 10px;
+}
+.Title{
+    margin:10px 0 ;
+}
+.label{
+    color:#728084;
+    font-size: 16px;
+    font-weight: normal;
+    pointer-events: none;
+    transition: 300ms ease all;
+    float: right;
+}
+.form-input-signup{
+    background: none;
+    background-color:rgb(208, 221, 232);
+    color: #524e4e ;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 3px solid #71Ceea;
+    margin: 25px 0;
+}

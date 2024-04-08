@@ -1,0 +1,16 @@
+body{
+  box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+   
+  background-color:rgb(208, 221, 232);  
+}
+p{
+  font-family: 'hanimation';
+  color: rgb(119, 118, 115);
+}
+h1{
+  font-family: 'sky-bold';
+  font-weight: bold;
+  
+}
