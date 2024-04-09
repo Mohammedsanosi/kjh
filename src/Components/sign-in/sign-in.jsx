@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth'; 
 import { auth,signInWithGoogle } from '../../firebase/firebase.utils';
 import { useNavigate } from 'react-router-dom';
+import "./sign-in.css" ;
+import blue from "../icon/blue.png" ;
+import { FcGoogle } from "react-icons/fc";
 
 const SignIn = ({ onSignUpClick }) => {
     const [email, setEmail] = useState('');
@@ -14,7 +16,7 @@ const SignIn = ({ onSignUpClick }) => {
         e.preventDefault();
         try {
           await signInWithEmailAndPassword(auth, email, password);
-          navigate('/');
+          
         } catch (error) {
           alert("Error signing in: " + error.message);
         }
@@ -43,12 +45,15 @@ const SignIn = ({ onSignUpClick }) => {
      };
     
     return(
-        <div className='container'>
+        <div className='container-login'>
             <div className='signin'>
-                <h2>I already have an account</h2>
-                <div className='group'>
+            <div className='logo-container'>
+            <img src={blue} alt='logo' className='logo-image' />
+            </div>
+            <h1 className='login-title'><span className='span-color'>تسجيل </span>دخول </h1>
+                
                     <form onSubmit={handleSubmit}>
-                        <label className='form-input-label'>Email</label>
+                        <label className='form-input-label'>البريد الإلكتروني</label>
                         <input
                             name='email'
                             type='email'
@@ -58,7 +63,7 @@ const SignIn = ({ onSignUpClick }) => {
                             className='form-input'
                             autoComplete='current-email'
                         />
-                        <label className='form-input-label'>Password</label>
+                        <label className='form-input-label'>كلمة المرور</label>
                         <input
                             name='password'
                             type='password'
@@ -68,15 +73,15 @@ const SignIn = ({ onSignUpClick }) => {
                             className='form-input'
                             autoComplete='current-password'
                         />
-                        <button type='submit'>Login</button>
+                        <button type='submit' className='login-button'>تسجيل الدخول</button>
                         <hr />
-                        <button onClick={handleGoogleSignIn}>Sign In with Google</button>
-                        <button type='button' onClick={onSignUpClick}>I don't have an account</button>
-                        <p>or <span onClick={goToSignUp}>Sign Up</span></p>
+                        <button onClick={handleGoogleSignIn} className="google-signin-button"> <FcGoogle className='google-signin-icon' />Sign In with Google</button>
+                        <p  >I don't have an account  <span className='span' onClick={goToSignUp}>Sign Up</span></p>
+                        
                     </form>
                 </div>
             </div>
-        </div>
+        
     )
 };
 

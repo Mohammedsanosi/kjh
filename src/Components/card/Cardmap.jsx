@@ -26,7 +26,7 @@ const CreateCard =() => {
                 </div>
             </div>
         
-        <div className="container">
+        <div className="container-card">
                 {filteredHotels.map(Cardd => (
                     <Card key={Cardd.id} Hotelname={Cardd.name} content={Cardd.describtion} image={Cardd.image} />
                 ))}

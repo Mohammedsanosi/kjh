@@ -1,10 +1,10 @@
 import React from "react";
 import "./Card.css"
-import { Link } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 
 const Card =({image,Hotelname,content}) => {
-    
+    const navigate = useNavigate() ;
     return(
         <div>
         <div className="Card"> 
@@ -12,7 +12,7 @@ const Card =({image,Hotelname,content}) => {
             <div className="bottom" >
             <h1>{Hotelname}</h1>
             <p>{content}</p>
-            <button className="btn2"> <Link to="/reserv" >حجز</Link></button>
+            <button className="btn2" onClick={()=> navigate('/reserv')}>التفاصيل</button>
             
              </div>
         </div>

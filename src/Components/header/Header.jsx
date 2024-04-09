@@ -9,8 +9,10 @@ import { auth } from "../../firebase/firebase.utils";
 import { RiAccountCircleFill } from "react-icons/ri";
 import { IoFileTrayStackedSharp } from "react-icons/io5";
 import { IoMdContacts } from "react-icons/io";
+import { TbLogout2,TbLogin2  } from "react-icons/tb";
 
 export const Header = ({CurrentUser}) => {
+
   return(
     <>
       {['lg'].map((expand) => (
@@ -34,14 +36,14 @@ export const Header = ({CurrentUser}) => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 p-3 icons">
-                 <Link to="/reserv" className="a"><RiAccountCircleFill size={30} className="i"/>حسابي  </Link> 
-                 <Link href="#" className="a"><IoFileTrayStackedSharp size={30} className="i"/>حجوزاتي </Link>
-                 <Link href="#" className="a"><IoMdContacts size={30} className="i" />تواصل معنا </Link>
+                 <Link to="/reserv" className="a"><RiAccountCircleFill  className="i"/>حسابي  </Link> 
+                 <Link href="#" className="a"><IoFileTrayStackedSharp  className="i"/>حجوزاتي </Link>
+                 <Link href="#" className="a"><IoMdContacts  className="i" />تواصل معنا </Link>
                  {
                  CurrentUser ? (
-                 <div className="a" onClick={()=> auth.signOut()}>تسجيل خروج</div> )
+                 <div className="a" onClick={()=>{ auth.signOut() ;}}> <TbLogout2 className="i"/>تسجيل خروج</div> )
                  :(
-                 <Link to="/sign" className="a"> تسجيل دخول </Link>
+                 <Link to="/" className="a">  <TbLogin2 className="i"/> تسجيل دخول </Link>
        )}
                 </Nav>
                 

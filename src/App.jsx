@@ -7,13 +7,12 @@ import Homepage from "./homepage/homepage.component";
 import Reserv from "./Components/reservation/reservation";
 import SignIn from "./Components/sign-in/sign-in";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-import Header from "./Components/header/Header";
 import SignUp from "./Components/sign-up/sign-up";
 
 const App = () => {
  const [CurrentUser, setCurrentUser] = useState(null);
  const [isLoggedIn, setIsloggedIn] = useState(false);
- const [showSignUp, setShowSignUp] = useState(false);
+//  const [showSignUp, setShowSignUp] = useState(false);
  const navigate = useNavigate();
 
  useEffect(() => {
@@ -27,14 +26,14 @@ const App = () => {
               ...snapshot.data(),
             });
             setIsloggedIn(true);
-            navigate('/');
+            navigate('/homepage');
           }
         });
         return () => unsubscribe();
       } else {
         setCurrentUser(null);
         setIsloggedIn(false);
-        navigate('/signin')
+        
         
       }
      
@@ -42,25 +41,28 @@ const App = () => {
     return () => unsubscribeFromAuth();
  }, [navigate]);
 
- useEffect(() => {
-  if (showSignUp) {
-      navigate('/signup');
-  }
-}, [showSignUp, navigate]);
+//  useEffect(() => {
+//   if (showSignUp) {
+//       navigate('/signup');
+//   }
+// }, [showSignUp, navigate]);
 
 
 
 return(
   <div>
-  <Header CurrentUser={CurrentUser} />
+  
     <Routes>
-      { !isLoggedIn ? (
-        <Route path="/signin" element={<SignIn  />} />
+    
+    {isLoggedIn ? (
+        <Route path="/homepage" element={<Homepage CurrentUser={CurrentUser} />} />
       ) : (
-        <Route path="/" element={<Homepage />} />
+        <Route exact path="/" element={<SignIn  />} />
         
       )}
+    
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/reserv" element={<Reserv />} />
     </Routes>
   </div>
 )

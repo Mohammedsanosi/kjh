@@ -1,8 +1,9 @@
-import React, { useState ,useEffect  } from "react";
-import { auth, createUserProfileDocument ,handleGoogleSignIn } from "../../firebase/firebase.utils";
+import React, { useState} from "react";
+import { auth, createUserProfileDocument} from "../../firebase/firebase.utils";
 import { createUserWithEmailAndPassword } from 'firebase/auth'; 
 import {useNavigate} from "react-router-dom"
 import './sign-up.css';
+import blue from "../icon/blue.png" ;
 
 const SignUp = () => {
 
@@ -64,15 +65,19 @@ const SignUp = () => {
     }
 
     return (
-       <div className="container">
+       <div className="container-signup">
        <div className="sign-up">
-            <h2 className="Title">I do not have an account</h2>
-            <span>Sign up with your email and password</span>
+       <div className='logo-container'>
+            <img src={blue} alt='logo' className='logo-image' />
+            </div>
 
+            <h2 className="signup-title">إنشاء <span className="span-color"> حساب</span> </h2>
+            
+           
             <form className="sign-up-form" onSubmit={handleSubmit}>
 
-                <label className="label">الاسم</label>
-                <input type="text"
+                <label className="form-input-label">الاسم</label>
+                <input type="name"
                     name="displayName"
                     value={displayName}
                     onChange={handleChange}
@@ -80,8 +85,8 @@ const SignUp = () => {
                     required
                 />
 <br/>
-                <label className="label">المدينة</label>
-                <input type="text"
+                <label className="form-input-label">المدينة</label>
+                <input type="city"
                     name="city"
                     value={city}
                     onChange={handleChange}
@@ -89,7 +94,7 @@ const SignUp = () => {
                     required
                 />
 <br/>
-                <label className="label">البريد الالكتروني</label>
+                <label className="form-input-label">البريد الالكتروني</label>
                 <input type="email"
                     name="email"
                     value={email}
@@ -98,7 +103,7 @@ const SignUp = () => {
                     required
                 />
 <br/>
-                <label className="label">كلمة المرور</label>
+                <label className="form-input-label">كلمة المرور</label>
                 <input type="password"
                     name="password"
                     value={password}
@@ -107,7 +112,7 @@ const SignUp = () => {
                     required
                 />
 <br/>
-                <label className="label">تأكيد كلمة المرور</label>
+                <label className="form-input-label">تأكيد كلمة المرور</label>
                 <input type="password"
                     name="confirmPassword"
                     value={confirmedPassword}
@@ -115,7 +120,7 @@ const SignUp = () => {
                     className="form-input-signup"
                     required
                 />
-                <input type="submit" />
+                <button type="submit" className="signup-button">تسجيل</button>
             </form>
             
         </div>

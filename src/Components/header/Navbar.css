@@ -47,6 +47,7 @@
 }
 
 .a{
+    position: relative;
     color: #fcfcfc;
     font-size: 19px;
     font-family: 'hanimation';
@@ -55,36 +56,29 @@
     margin-right: 40px;
     display:inline-block;
     text-align: left;
-    transition: 400ms;
+    transition: 450ms;
     cursor: pointer;
     
 }
 .a:hover{
-    background:#ffffff;
-    color: #67d6f8;
-    margin-top: 0px;
-    border-radius: 10px;
+    
+    color: #5d6466;
+   
    
    
 }
 
-.icons{
-   position: relative;
-   padding: 2px;
-   
-   
-   
-}
+
 .i{
    
        position:absolute;
-       left: -5px;
-
+       left: -20px;
+       top: 16px;
        color: #ffffff;
-       
+       font-size: 30px;
       }
-      .i:hover{
-        color: #71CEEA;
+      .icons:hover{
+        color: #5d6466;
       }
 
 

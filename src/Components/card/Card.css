@@ -1,9 +1,15 @@
 
-.container{
+
+ @keyframes shadow-drop-br{0%{box-shadow:0 0 0 0 transparent}100%{box-shadow:12px 12px 20px -12px rgba(0,0,0,.35)}}
+
+
+
+
+
+.container-card{
       display: flex;
     justify-content: center;
-    flex-direction: row;
-    flex-grow:inherit;
+    flex-direction: row; 
     flex-wrap: wrap;
     align-items: center;
 margin-top: 50px;
@@ -11,7 +17,7 @@ margin-top: 50px;
 
 }
 .Card{
-    
+    animation:shadow-drop-br 2s cubic-bezier(.25,.46,.45,.94) .5s both ;
     width: 325px;
     overflow: hidden;
     background-color: rgb(255, 255, 255);
@@ -19,7 +25,7 @@ margin-top: 50px;
     border-radius: 20px;
     padding: 0px 0px 5px 0px;
     margin: 20px;
-    box-shadow:8px 8px 7px rgb(194, 203, 211)  ;
+    box-shadow:10px 10px 7px rgb(194, 203, 211)  ;
     
 }
 .bottom{
