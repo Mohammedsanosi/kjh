@@ -7,7 +7,7 @@ import "./Navbar.css" ;
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 import { RiAccountCircleFill } from "react-icons/ri";
-import { IoFileTrayStackedSharp } from "react-icons/io5";
+
 import { IoMdContacts } from "react-icons/io";
 import { TbLogout2,TbLogin2  } from "react-icons/tb";
 
@@ -18,7 +18,7 @@ export const Header = ({CurrentUser}) => {
       {['lg'].map((expand) => (
         <Navbar key={expand} expand={expand} sticky="top" className="bg-body-tertiary mb-3 nav">
           <Container fluid className="nav">
-            <a href="#." className="Main-title">hotel.ly</a>
+            <Link to="/" className="Main-title">hotel.ly</Link>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} 
               style={{color:'#71CEEA'}}
             />
@@ -35,11 +35,10 @@ export const Header = ({CurrentUser}) => {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 p-3 icons">
-                 <Link to="/reserv" className="a"><RiAccountCircleFill  className="i"/>حسابي  </Link> 
-                 <Link href="#" className="a"><IoFileTrayStackedSharp  className="i"/>حجوزاتي </Link>
-                 <Link href="#" className="a"><IoMdContacts  className="i" />تواصل معنا </Link>
-                 {
+                <Nav className="justify-content-end flex-grow-1 p-3 icons"> 
+                 <Link href="#" className="a"> <IoMdContacts  className="i" />تواصل معنا </Link>
+                 <Link to="/my-account" className="a"><RiAccountCircleFill  className="i"/> حسابي </Link>
+                 { 
                  CurrentUser ? (
                  <div className="a" onClick={()=>{ auth.signOut() ;}}> <TbLogout2 className="i"/>تسجيل خروج</div> )
                  :(

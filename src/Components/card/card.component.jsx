@@ -3,16 +3,19 @@ import "./Card.css"
 import {useNavigate} from 'react-router-dom';
 
 
-const Card =({image,Hotelname,content}) => {
+const Card =({image,Hotelname,location,id}) => {
     const navigate = useNavigate() ;
+    const handleNavigate = () => {
+        navigate('/details', { state: { cardId: id , hotelName: Hotelname } }); // Pass the card ID in the state
+    };
     return(
         <div>
         <div className="Card"> 
         <img src={image} alt="hotels" className="Top-image"/>
             <div className="bottom" >
             <h1>{Hotelname}</h1>
-            <p>{content}</p>
-            <button className="btn2" onClick={()=> navigate('/reserv')}>التفاصيل</button>
+             <p>{location}</p>
+            <button className="btn2" onClick={handleNavigate}>التفاصيل</button>
             
              </div>
         </div>

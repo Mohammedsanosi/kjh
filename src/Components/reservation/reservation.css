@@ -1,6 +1,7 @@
 .body{
     background-color: rgb(255, 255, 255);
     width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -82,4 +83,113 @@ align-items: center;
 .btn:hover{
     background-color: #27a0d4;
     color: #ffffff;
+}
+
+/* details page styles */
+.form {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    font-family: 'hanimation';
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .form-control-custom, .form-Select-custom {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #73787c;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .form-control-custom:focus, .form-Select-custom:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .confirm-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #05b5eb;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #71ceea;
+  }
+  
+
+  /* invoice page */
+
+  .invoice {
+    font-family: 'hanimation';
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+.invoice .head {
+    text-align: center;
+    color: #575252;
+    font-family: 'hanimation';
+    
+}
+.invoice p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    padding: 5px;
+    margin-right: 10px;
+    text-align: right;
+}
+.detail .room-details{
+    color:#575252;
+    font-size: 25px;
+    text-align: right;
+    font-family: 'hanimation';
+}
+.pdf-button{
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #05b5eb;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
 }

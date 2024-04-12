@@ -82,17 +82,21 @@ const SignUp = () => {
                     value={displayName}
                     onChange={handleChange}
                     className="form-input-signup"
+                    pattern="[A-Za-z\u0621-\u064A ]+"  // This pattern allows English and Arabic letters and spaces
+    title="Please enter letters only."
                     required
                 />
 <br/>
-                <label className="form-input-label">المدينة</label>
-                <input type="city"
-                    name="city"
-                    value={city}
-                    onChange={handleChange}
-                    className="form-input-signup"
-                    required
-                />
+<label className="form-input-label">المدينة</label>
+<input type="text"
+    name="city"
+    value={city}
+    onChange={handleChange}
+    className="form-input-signup"
+    pattern="[A-Za-z\u0621-\u064A ]+"  // This pattern allows English and Arabic letters and spaces
+    title="Please enter letters only."
+    required
+/>
 <br/>
                 <label className="form-input-label">البريد الالكتروني</label>
                 <input type="email"
