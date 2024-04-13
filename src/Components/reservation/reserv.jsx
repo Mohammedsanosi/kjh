@@ -4,6 +4,7 @@ import { Form } from 'react-bootstrap';
 import { db } from '../../firebase/firebase.utils'
 import { collection, addDoc } from 'firebase/firestore';
 import './reservation.css';
+
 const Reserv = () => {
     const [ReservName, setReservName] = useState('');
     const [arrivalDate, setArrivalDate] = useState('');
@@ -136,4 +137,3 @@ const [hotelName] = useState(location.state.hotelName);
   export default Reserv;
 
 
-//   ok great now i want to have another component that shows spesific user reservations

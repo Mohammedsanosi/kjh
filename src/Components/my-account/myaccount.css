@@ -10,6 +10,12 @@
     border: 1px solid #ced4da;
     border-radius: 25px;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    outline-offset: 1px;
+}
+.form-control-myaccount:focus{
+    
+    outline-offset:2px;
+    outline: #0c9bf4;
 }
 .heading-my{
     font-size: 35px;

@@ -76,7 +76,7 @@ const SignIn = ({ onSignUpClick }) => {
                         <button type='submit' className='login-button'>تسجيل الدخول</button>
                         <hr />
                         <button onClick={handleGoogleSignIn} className="google-signin-button"> <FcGoogle className='google-signin-icon' />Sign In with Google</button>
-                        <p  >I don't have an account  <span className='span' onClick={goToSignUp}>Sign Up</span></p>
+                        <p  >ليس لديك حساب <span className='span' onClick={goToSignUp}>سجل من هنا</span></p>
                         
                     </form>
                 </div>

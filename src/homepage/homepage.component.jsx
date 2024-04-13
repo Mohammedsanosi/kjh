@@ -1,8 +1,7 @@
 import React from "react"; 
 import CreateCard from "../Components/card/Cardmap";
 import Footer from "../Components/footer/Footer" ;
-import {Routes,Route} from "react-router-dom";
-import Reserv from "../Components/reservation/details"
+
 
 import "../Components/card/Card.css" ;
 
